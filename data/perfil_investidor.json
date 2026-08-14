@@ -1,0 +1,12 @@
+{
+    "CLIENTE_01": {
+        "Idade": 35,
+        "Renda Mensal": 3000.0,
+        "Tempo de Relacionamento": 24
+    },
+    "CLIENTE_02": {
+        "Idade": 36,
+        "Renda Mensal": 3000.1,
+        "Tempo de Relacionamento": 25
+    }
+}
