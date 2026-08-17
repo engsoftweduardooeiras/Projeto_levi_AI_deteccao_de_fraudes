@@ -1,0 +1,22 @@
+[
+    {
+        "nome_produto": "Crédito Pessoal Automático",
+        "taxa_juros": "2.99% a.m.",
+        "limite_maximo": 15000
+    },
+    {
+        "nome_produto": "Consignado Privado",
+        "taxa_juros": "1.89% a.m.",
+        "limite_maximo": 50000
+    },
+    {
+        "nome_produto": "Cartão Platinum Flex",
+        "taxa_juros": "3.49% a.m.",
+        "limite_maximo": 25000
+    },
+    {
+        "nome_produto": "Microcrédito Estruturado",
+        "taxa_juros": "1.49% a.m.",
+        "limite_maximo": 5000
+    }
+]

@@ -16,8 +16,21 @@ from sklearn.metrics import precision_recall_curve, auc, make_scorer
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 os.makedirs('modelos', exist_ok=True)
 
-logging.INFO("Iniciando processamento e unificação da base de dados...")
-partes = [pd.read_csv(f'data/cartao_de_credito_sintetico_parte_{i:02d}.csv') for i in range(1, 11)]
+logging.info("Iniciando processamento e unificação da base de dados...")
+partes = []
+for i in range(1, 11):
+    caminho = f'data/cartao_de_credito_sintetico_parte_{i:02d}.csv'
+    if os.path.exists(caminho) and os.path.getsize(caminho) > 0:
+        try:
+            df_temp = pd.read_csv(caminho)
+            if not df_temp.empty:
+                partes.append(df_temp)
+        except Exception as e:
+            logging.warning(f"Não foi possível ler {caminho}: {e}")
+
+if not partes:
+    raise ValueError("Nenhum arquivo CSV com dados válidos foi encontrado na pasta data/!")
+
 df_completo = pd.concat(partes, ignore_index=True).dropna(subset=["Class"])
 
 if 'Device_IP' in df_completo.columns:
@@ -48,9 +61,9 @@ modelo_xgb = xgb.XGBClassifier(objective="binary:logistic", eval_metric="logloss
 pipeline_antifraude = Pipeline(steps=[('preprocessor', preprocessor), ('classifier', modelo_xgb)])
 
 param_grid = {
-    'classifier__max_depth':,
-    'classifier__learning_rate': [0.05, 0.1],
-    'classifier__n_estimators':
+    'classifier__max_depth': [3, 5],
+    'classifier__learning_rate': [0.1],
+    'classifier__n_estimators': [100]
 }
 
 def calcular_auprc(y_true, y_pred_proba):
@@ -63,8 +76,8 @@ cv_estratificado = StratifiedKFold(n_splits=3, shuffle=True, random_state=42)
 grid = GridSearchCV(estimator=pipeline_antifraude, param_grid=param_grid, scoring=auprc_scorer, cv=cv_estratificado, n_jobs=-1)
 grid.fit(X_train, y_train)
 
-modelo_calibrado = CalibratedClassifierCV(estimator=grid.best_estimator_, method='isotonic', cv='prefit')
-modelo_calibrado.fit(X_test, y_test)
+modelo_calibrado = CalibratedClassifierCV(estimator=grid.best_estimator_, method='isotonic', cv=3)
+modelo_calibrado.fit(X_train, y_train)
 
 joblib.dump(modelo_calibrado, 'modelos/pipeline_antifraude_calibrado.joblib')
 logging.info("🧠 Modelo preditivo acoplado e exportado com absoluto sucesso.")

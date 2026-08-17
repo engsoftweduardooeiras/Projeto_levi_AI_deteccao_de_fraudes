@@ -1,0 +1,5 @@
+.streamlit/
+.streamlit/secrets.toml
+auditoria_pdfs/
+__pycache__/
+*.joblib

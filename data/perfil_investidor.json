@@ -8,5 +8,10 @@
         "Idade": 36,
         "Renda Mensal": 3000.1,
         "Tempo de Relacionamento": 25
+    },
+    "CLIENTE_5555": {
+        "Idade": 42,
+        "Renda Mensal": 8500.0,
+        "Tempo de Relacionamento": 48
     }
 }

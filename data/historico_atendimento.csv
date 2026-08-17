@@ -1,0 +1,4 @@
+id_cliente,data,categoria,status_resolucao
+CLIENTE_8942,2026-07-10,Cartões,Resolvido
+CLIENTE_8942,2026-08-01,Crédito,Em Análise
+CLIENTE_1020,2026-06-15,Fraude,Bloqueado
