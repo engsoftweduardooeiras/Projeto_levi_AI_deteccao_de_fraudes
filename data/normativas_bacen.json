@@ -1,0 +1,28 @@
+{
+  "resolucoes_bcb": [
+    {
+      "codigo": "Resolução BCB nº 147/2021",
+      "tema": "Mecanismo Especial de Devolução e Bloqueio Cautelar",
+      "diretriz": "Permite o bloqueio preventivo de recursos oriundos de transações atípicas por até 72 horas em casos de fundada suspeita de fraude.",
+      "aplicacao_risco": "ZONA VERMELHA ou AMARELA com transação suspeita."
+    },
+    {
+      "codigo": "Resolução CMN nº 4.949/2021",
+      "tema": "Relacionamento com Clientes e Prevenção ao Superendividamento",
+      "diretriz": "Exige avaliação rigorosa da capacidade financeira do cliente e transparência na oferta de produtos de crédito consignado e rotativo.",
+      "aplicacao_risco": "ZONA VERDE / Homologação de novos limites de crédito."
+    },
+    {
+      "codigo": "Circular BACEN nº 3.978/2020",
+      "tema": "Prevenção à Lavagem de Dinheiro e Financiamento do Terrorismo (PLD/FT)",
+      "diretriz": "Obriga o monitoramento contínuo e comunicação imediata ao COAF para operações que apresentem incompatibilidade com o patrimônio ou perfil cadastral.",
+      "aplicacao_risco": "ZONA VERMELHA com anomalia de IP ou valor desproporcional."
+    },
+    {
+      "codigo": "Lei Federal nº 13.709/2018 (LGPD)",
+      "tema": "Proteção de Dados e Decisões Automatizadas",
+      "diretriz": "Garante ao titular o direito de obter informações claras sobre os critérios e procedimentos utilizados para decisões tomadas unicamente com base em tratamento automatizado de dados pessoais.",
+      "aplicacao_risco": "Auditorias de explicabilidade (XAI) do modelo preditivo."
+    }
+  ]
+}
