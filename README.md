@@ -28,10 +28,10 @@ Este repositório representa o estágio corporativo e aprimorado de uma esteira 
 
 | Aba | Funcionalidade | Tecnologia |
 | :--- | :--- | :--- |
-| **1. 📊 Auditoria de Crédito** | Inferência de risco, exibição de XAI e emissão de laudo timbrado[cite: 1] | XGBoost + ReportLab[cite: 1] |
-| **2. ➕ Novos Dados** | Cadastro e indexação dinâmica de proponentes em disco[cite: 1] | JSON / Pandas[cite: 1] |
-| **3. 🔒 Painel de Logs** | Visualização em tempo real dos PDFs gerados[cite: 1] | Base64 PDF Viewer[cite: 1] |
-| **4. 💬 Chat Levi** | Consulta e deliberação técnica com grounding regulatório BACEN | Google Gemini 2.0 Flash[cite: 1] |
+| **1. 📊 Auditoria de Crédito** | Inferência de risco, exibição de XAI e emissão de laudo timbrado | XGBoost + ReportLab |
+| **2. ➕ Novos Dados** | Cadastro e indexação dinâmica de proponentes em disco | JSON / Pandas |
+| **3. 🔒 Painel de Logs** | Visualização em tempo real dos PDFs gerados | Base64 PDF Viewer |
+| **4. 💬 Chat Levi** | Consulta e deliberação técnica com grounding regulatório BACEN | Google Gemini 2.0 Flash |
 
 ---
 
@@ -56,8 +56,8 @@ GEMINI_API_KEY = "SUA_CHAVE_AQUI"
 streamlit run app.py
 
 🛠️ **Tecnologias Utilizadas**
-Linguagem: Python 3.12+
-Interface: Streamlit
-Machine Learning: XGBoost & Scikit-Learn
-Documentação & Relatórios: ReportLab
-LLM & Governança: Google GenAI SDK (Gemini)
+* **Linguagem:** Python 3.12+
+* **Interface:** Streamlit
+* **Machine Learning:** XGBoost & Scikit-Learn
+* **Documentação & Relatórios:** ReportLab
+* **LLM & Governança:** Google GenAI SDK (Gemini)
