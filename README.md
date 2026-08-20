@@ -19,6 +19,7 @@ Este repositório representa o estágio corporativo e aprimorado de uma esteira 
 
 * **Motor Preditivo (XGBoost):** Classificação probabilística em Zonas de Risco (*Verde*, *Amarela* e *Vermelha*) com disparo automatizado de alertas de segurança para a diretoria.
 * **Laudos em PDF Timbrado (ReportLab):** Geração dinâmica de pareceres técnicos com trilha de auditoria (XAI), identificador de operador e visualizador em tela.
+* **Auditoria Massiva & Exportação (OpenPyXL / Pandas):** Processamento em lote de intervalos de transações com parametrização dinâmica de rede, autenticação, faixas de valores e geração de planilhas formatadas (.xlsx).
 * **Base Regulatória BACEN / LGPD:** Grounding local de normativas federais (Resolução BCB nº 147/2021, Resolução CMN nº 4.949/2021, Circular BACEN nº 3.978/2020 e Lei nº 13.709/2018).
 * **Mesa Consultiva (Chat com Analista Levi):** Assistente conversacional multi-turno via **Google GenAI SDK**, com controle estrito de persona corporativa, barreira contra dados sensíveis e rejeição de solicitações fora do domínio de crédito.
 
@@ -32,6 +33,7 @@ Este repositório representa o estágio corporativo e aprimorado de uma esteira 
 | **2. ➕ Novos Dados** | Cadastro e indexação dinâmica de proponentes em disco | JSON / Pandas |
 | **3. 🔒 Painel de Logs** | Visualização em tempo real dos PDFs gerados | Base64 PDF Viewer |
 | **4. 💬 Chat Levi** | Consulta e deliberação técnica com grounding regulatório BACEN | Google Gemini 2.0 Flash |
+| **5. 📑 Auditoria em Lote** | Análise massiva por intervalos/upload com parametrização completa e exportação | Pandas + OpenPyXL |
 
 ---
 
@@ -44,7 +46,7 @@ Este repositório representa o estágio corporativo e aprimorado de uma esteira 
 
 * **Instale as dependências:**
 **Bash**
-pip install streamlit pandas joblib xgboost reportlab google-genai
+pip install streamlit pandas joblib xgboost reportlab google-genai openpyxl
 
 * **Configure as credenciais (opcional para IA externa):**
 **Crie o arquivo**``.streamlit/secrets.toml``:
@@ -58,6 +60,7 @@ streamlit run app.py
 🛠️ **Tecnologias Utilizadas**
 * **Linguagem:** Python 3.12+
 * **Interface:** Streamlit
-* **Machine Learning:** XGBoost & Scikit-Learn
+* **Machine Learning:** XGBoost & Scikit-Learn & Joblib
 * **Documentação & Relatórios:** ReportLab
-* **LLM & Governança:** Google GenAI SDK (Gemini)
+* **LLM & Governança:** Google GenAI SDK (Gemini 2.0 Flash) & Grounding em Normativas BACEN
+* **Manipulacao_e_Exportacao:** Pandas & OpenPyXL
